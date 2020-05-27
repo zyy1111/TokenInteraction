@@ -1,0 +1,20 @@
+.header img {
+  float: left;
+  width: 300px;
+  height: 80px;
+}
+
+.flex-container {
+  display: flex;
+  padding-left: 50px;
+  height: 110px;
+  
+}
+
+.flex-container > .link {
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+

@@ -1,17 +1,28 @@
-import React from 'react';
+import React, {PureComponent, Fragment} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Route} from 'react-router-dom';
+import Header from './common/header';
+import Home from './pages/home'
+import Car from './pages/car';
+import Hotpotato from './pages/hotpotato';
+import Petcare from './pages/petcare';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class App extends PureComponent {
+  render() {
+    return (
+      <Fragment>
+        <BrowserRouter>
+          <Header/>
+            <div>
+              <Route path='/' exact component={Home}></Route>
+              <Route path='/car' exact component={Car}></Route>
+              <Route path='/hotpotato' exact component={Hotpotato}></Route>
+              <Route path='/petcare' exact component={Petcare}></Route>
+            </div>
+        </BrowserRouter>
+      </Fragment>
+    )
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App />, document.getElementById('root'));
