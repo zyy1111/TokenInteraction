@@ -1,6 +1,6 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
-class Home extends PureComponent {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

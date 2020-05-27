@@ -1,4 +1,4 @@
-import React, {PureComponent, Fragment} from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route} from 'react-router-dom';
 import Header from './common/header';
@@ -7,7 +7,7 @@ import Car from './pages/car';
 import Hotpotato from './pages/hotpotato';
 import Petcare from './pages/petcare';
 
-class App extends PureComponent {
+class App extends React.Component {
   render() {
     return (
       <Fragment>
