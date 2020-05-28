@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
 import './header.css';
 
 class Header extends PureComponent {
@@ -10,11 +11,25 @@ class Header extends PureComponent {
         <div className="flex-container">
           <Link to="/hotpotato" className="link"> HOTPOTATO </Link>
           <Link to="/petcare" className="link"> PETCARE </Link>
-          <Link to="/car" className="link"> CAR </Link>
+          <Link to="/hello" className="link"> HELLO </Link>
+          <div className="score">
+            <p className="bold">Amount of tokens you have got:</p>
+            <div>HOTPOTATO: {this.props.potatoNum} </div>
+            <div>PETCARE: {this.props.petNum} </div>
+            <div>HELLO: {this.props.helloNum} </div>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    helloNum: state.helloNum,
+    petNum: state.petNum,
+    potatoNum: state.potatoNum
+  }
+}
+
+export default connect(mapStateToProps, null)(Header);

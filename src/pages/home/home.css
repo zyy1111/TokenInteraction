@@ -1,0 +1,16 @@
+.div {
+  width:225px; 
+  height:150px; 
+  padding-top:50px; 
+  padding-left:400px;
+}
+
+img {
+  width: 500px;
+  height: 300px;
+  cursor: pointer;
+}
+
+h2 {
+  color: #ec6149;
+}
