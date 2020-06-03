@@ -1,8 +1,8 @@
 const defaultState = {
-  account: '',
-  helloNum: 0,
-  petNum: 0,
-  potatoNum: 0
+  account: localStorage.getItem('account'),
+  helloNum: '*',
+  petNum: '*',
+  potatoNum: '*'
 };
 
 export default (state = defaultState, action) => {
@@ -16,6 +16,13 @@ export default (state = defaultState, action) => {
     if(action.ticker === 'HELLO')  newState.helloNum++;
     if(action.ticker === 'PETCARE')  newState.petNum++;
     if(action.ticker === 'HOTPOTATO')  newState.potatoNum++;
+    return newState;
+  }
+  if(action.type === 'CHANGE_BALANCE') {
+    const newState = JSON.parse(JSON.stringify(state));
+    if(action.tokenType === 'HELLO')  newState.helloNum = action.output;
+    if(action.tokenType === 'PETCARE')  newState.petNum = action.output;
+    if(action.tokenType === 'HOTPOTATO')  newState.potatoNum = action.output;
     return newState;
   }
   return state;
